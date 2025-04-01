@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://inventory-app-umber-pi.vercel.app'],
+    origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
