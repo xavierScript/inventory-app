@@ -15,7 +15,9 @@ app.use(
     origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true // if using cookies/auth headers
+    credentials: true,
+    preflightContinue: false,
+    optionsSuccessStatus: 204
   })
 );
 
