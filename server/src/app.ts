@@ -10,7 +10,16 @@ const app: Application = express();
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.use(cors({ origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app'] }));
+app.use(
+  cors({
+    origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true // if using cookies/auth headers
+  })
+);
+
+app.options('*', cors());
 
 // application routes
 app.use('/api/v1', rootRouter);
