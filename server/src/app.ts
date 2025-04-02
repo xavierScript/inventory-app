@@ -12,11 +12,10 @@ app.use(morgan('dev'));
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app'],
+    origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app', 'https://inventory-app-rho-nine.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
     credentials: true,
-    preflightContinue: false,
     optionsSuccessStatus: 204
   })
 );
