@@ -7,9 +7,6 @@ import globalErrorHandler from './middlewares/globalErrorhandler';
 
 const app: Application = express();
 
-app.use(express.json());
-app.use(morgan('dev'));
-
 app.use(
   cors({
     origin: ['http://localhost:5173', 'https://inventory-ngic.vercel.app', 'https://inventory-app-rho-nine.vercel.app'],
@@ -19,6 +16,9 @@ app.use(
     optionsSuccessStatus: 204
   })
 );
+
+app.use(express.json());
+app.use(morgan('dev'));
 
 app.options('*', cors());
 
